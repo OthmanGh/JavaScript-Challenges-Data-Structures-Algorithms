@@ -3,7 +3,8 @@ function calculateTotalSalesWithTax(products, taxRate) {
     .map((obj) => obj['price'] * obj['quantity'])
     .reduce((total, price) => total + price, 0);
 
-  const totalSalesWithTax = (totalSales * taxRate) / 100;
+  const totalSalesWithTax = totalSales + totalSales * (taxRate / 100);
+
   return Number(totalSalesWithTax.toFixed(2));
 }
 
